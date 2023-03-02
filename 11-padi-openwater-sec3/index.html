@@ -1,247 +1,1343 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://tanviralam.com/11-padi-openwater-sec3/" />
-      <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>11 padi openwater sec3 - Tanvir's Notes</title>
-    <link rel="stylesheet" href="../css/theme.css" />
-    <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-      <script>
-        // Current page data
-        var mkdocs_page_name = "11 padi openwater sec3";
-        var mkdocs_page_input_path = "11-padi-openwater-sec3.md";
-        var mkdocs_page_url = "/11-padi-openwater-sec3/";
-      </script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://tanviralam.com/11-padi-openwater-sec3/">
+      
+      
+        <link rel="prev" href="../10-padi-openwater-sec2/">
+      
+      
+        <link rel="next" href="../12-padi-openwater-sec3-problem-management/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
-    <!--[if lt IE 9]>
-      <script src="../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
-</head>
+    
+      
+        <title>11 padi openwater sec3 - Tanvir's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.113286f1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
 
-<body class="wy-body-for-nav" role="document">
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> Tanvir's Notes
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../01-linear-algebra-machine-learning/">Linear Algebra for Machine Learning</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../02-git_workflow/">Creating a repo</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../03-python-virtual-environments-with-jupyter/">What are Python Virtual Environments</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../04-ecommerce-payments/">Structure</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../05-pubsub-google-clouds/">05 pubsub google clouds</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../07-tmux/">Tmux</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../08-using-system-clipboard-in-vim/">08 using system clipboard in vim</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../09-padi-openwater-sec1/">09 padi openwater sec1</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../10-padi-openwater-sec2/">10 padi openwater sec2</a>
-                </li>
-              </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">11 padi openwater sec3</a>
-    <ul class="current">
-    </ul>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../12-padi-openwater-sec3-problem-management/">12 padi openwater sec3 problem management</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../13-padi-openwater-sec3-equipment3/">13 padi openwater sec3 equipment3</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../14-padi-openwater-sec3-skills2/">14 padi openwater sec3 skills2</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../15-padi-openwater-sec4-equipment4/">15 padi openwater sec4 equipment4</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../16-padi-openwater-sec4-diver4/">16 padi openwater sec4 diver4</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../17-padi-openwater-sec4-divecomputers1/">17 padi openwater sec4 divecomputers1</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../18-padi-openwater-sec4-skills4/">18 padi openwater sec4 skills4</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../19-padi-openwater-sec5-divecomputers2/">19 padi openwater sec5 divecomputers2</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../20-padi-openwater-sec5-diver5/">20 padi openwater sec5 diver5</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../21-padi-sec5-skills5/">21 padi sec5 skills5</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../22-ubuntu-bluetooth-uninstall-reinstall/">22 ubuntu bluetooth uninstall reinstall</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../23-advanced-big-query/">Objectives</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../24-freedomticket-week1-intro-to-selling/">24 freedomticket week1 intro to selling</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../25-gcp-essential-infrastructure-cloud-sql/">Implementing Cloud SQL</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../26-gcp-essential-infrastructure-monitoring/">Resource Monitoring</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../27-gcp-elastic-cloud-vpn/">Virtual Private Networks (VPN)</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../28-http-load-balancer/">Configuring an HTTP Load Balancer with Autoscaling</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../29-internal-load-balancer/">Configuring an Internal Load Balancer</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../30-deployment-manager/">Automating the Deployment of Infrastructure Using Deployment Manager</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../31-aws-session/">31 aws session</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../32-gcp-cloud-build/">32 gcp cloud build</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../33-gcp-deploying-kubernetes/">33 gcp deploying kubernetes</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../34-gcp-creating-kubernetes-engine-deployments/">Creating Google Kubernetes Engine Deployments</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../35-gcp-persistent-volume-for-gke/">Configuring persistent volume for Google Kubernetes Engine</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../36-gcloud-basics/">Basic gcloud commands</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../37-migrate-for-anthos/">37 migrate for anthos</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../38-kubectl-basics/">38 kubectl basics</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../39-creating-gke-deployments/">39 creating gke deployments</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../40-data-reliability-conference/">40 data reliability conference</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../41-persistent-storage-gke/">Persistent storage in GKE</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../42-creating-gke-deployments-from-shell/">42 creating gke deployments from shell</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../43-setting-up-react/">Steps to run react in local environment</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../44-redis-with-gcp-cloud-func/">44 redis with gcp cloud func</a>
-                </li>
-              </ul>
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Tanvir&#39;s Notes" class="md-header__button md-logo" aria-label="Tanvir's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tanvir's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              11 padi openwater sec3
+            
+          </span>
+        </div>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">Tanvir's Notes</a>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
         
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
       </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>11 padi openwater sec3</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
               
-                <h2 id="introduction">Introduction</h2>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Tanvir&#39;s Notes" class="md-nav__button md-logo" aria-label="Tanvir's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Tanvir's Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-linear-algebra-machine-learning/" class="md-nav__link">
+        Linear Algebra for Machine Learning
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-git_workflow/" class="md-nav__link">
+        Creating a repo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-python-virtual-environments-with-jupyter/" class="md-nav__link">
+        What are Python Virtual Environments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-ecommerce-payments/" class="md-nav__link">
+        Structure
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-pubsub-google-clouds/" class="md-nav__link">
+        05 pubsub google clouds
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-tmux/" class="md-nav__link">
+        Tmux
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-using-system-clipboard-in-vim/" class="md-nav__link">
+        08 using system clipboard in vim
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-padi-openwater-sec1/" class="md-nav__link">
+        09 padi openwater sec1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-padi-openwater-sec2/" class="md-nav__link">
+        10 padi openwater sec2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          11 padi openwater sec3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        11 padi openwater sec3
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dive-environments-and-conditions" class="md-nav__link">
+    Dive environments and conditions
+  </a>
+  
+    <nav class="md-nav" aria-label="Dive environments and conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temperature" class="md-nav__link">
+    Temperature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visibility" class="md-nav__link">
+    Visibility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water-movement" class="md-nav__link">
+    Water movement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom-composition" class="md-nav__link">
+    Bottom composition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sunlight" class="md-nav__link">
+    Sunlight
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fresh-water-vs-salt-water" class="md-nav__link">
+    Fresh water vs salt water
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overhead-environments" class="md-nav__link">
+    Overhead environments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessing-conditions" class="md-nav__link">
+    Assessing conditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dive-with-limits" class="md-nav__link">
+    Dive with limits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acquatic-life" class="md-nav__link">
+    Acquatic life
+  </a>
+  
+    <nav class="md-nav" aria-label="Acquatic life">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hazardous-organisms" class="md-nav__link">
+    Hazardous organisms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aquatic-plant-hazards" class="md-nav__link">
+    Aquatic plant hazards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-aware" class="md-nav__link">
+    Project AWARE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diving-from-shore" class="md-nav__link">
+    Diving from shore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shore-diving-through-mild-surf" class="md-nav__link">
+    Shore diving through mild surf
+  </a>
+  
+    <nav class="md-nav" aria-label="Shore diving through mild surf">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#longshore-current" class="md-nav__link">
+    Longshore current
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rip-current" class="md-nav__link">
+    Rip current
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upwelling" class="md-nav__link">
+    Upwelling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tides" class="md-nav__link">
+    Tides
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diving-from-boats-preparations" class="md-nav__link">
+    Diving from boats - preparations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diving-from-boats-procedures" class="md-nav__link">
+    Diving from boats - procedures
+  </a>
+  
+    <nav class="md-nav" aria-label="Diving from boats - procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boat-diving-exit-procedure" class="md-nav__link">
+    Boat diving exit procedure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boat-diving-with-moderate-current" class="md-nav__link">
+    Boat diving with moderate current
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dive-boat-not-in-sight" class="md-nav__link">
+    Dive boat not in sight
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dive-planning" class="md-nav__link">
+    Dive planning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-padi-openwater-sec3-problem-management/" class="md-nav__link">
+        12 padi openwater sec3 problem management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-padi-openwater-sec3-equipment3/" class="md-nav__link">
+        13 padi openwater sec3 equipment3
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-padi-openwater-sec3-skills2/" class="md-nav__link">
+        14 padi openwater sec3 skills2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-padi-openwater-sec4-equipment4/" class="md-nav__link">
+        15 padi openwater sec4 equipment4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-padi-openwater-sec4-diver4/" class="md-nav__link">
+        16 padi openwater sec4 diver4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-padi-openwater-sec4-divecomputers1/" class="md-nav__link">
+        17 padi openwater sec4 divecomputers1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-padi-openwater-sec4-skills4/" class="md-nav__link">
+        18 padi openwater sec4 skills4
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-padi-openwater-sec5-divecomputers2/" class="md-nav__link">
+        19 padi openwater sec5 divecomputers2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-padi-openwater-sec5-diver5/" class="md-nav__link">
+        20 padi openwater sec5 diver5
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-padi-sec5-skills5/" class="md-nav__link">
+        21 padi sec5 skills5
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-ubuntu-bluetooth-uninstall-reinstall/" class="md-nav__link">
+        22 ubuntu bluetooth uninstall reinstall
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-advanced-big-query/" class="md-nav__link">
+        Objectives
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-freedomticket-week1-intro-to-selling/" class="md-nav__link">
+        24 freedomticket week1 intro to selling
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-gcp-essential-infrastructure-cloud-sql/" class="md-nav__link">
+        Implementing Cloud SQL
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-gcp-essential-infrastructure-monitoring/" class="md-nav__link">
+        Resource Monitoring
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-gcp-elastic-cloud-vpn/" class="md-nav__link">
+        Virtual Private Networks (VPN)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-http-load-balancer/" class="md-nav__link">
+        Configuring an HTTP Load Balancer with Autoscaling
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-internal-load-balancer/" class="md-nav__link">
+        Configuring an Internal Load Balancer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-deployment-manager/" class="md-nav__link">
+        Automating the Deployment of Infrastructure Using Deployment Manager
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-aws-session/" class="md-nav__link">
+        31 aws session
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-gcp-cloud-build/" class="md-nav__link">
+        32 gcp cloud build
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-gcp-deploying-kubernetes/" class="md-nav__link">
+        33 gcp deploying kubernetes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../34-gcp-creating-kubernetes-engine-deployments/" class="md-nav__link">
+        Creating Google Kubernetes Engine Deployments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-gcp-persistent-volume-for-gke/" class="md-nav__link">
+        Configuring persistent volume for Google Kubernetes Engine
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../36-gcloud-basics/" class="md-nav__link">
+        Basic gcloud commands
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../37-migrate-for-anthos/" class="md-nav__link">
+        37 migrate for anthos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../38-kubectl-basics/" class="md-nav__link">
+        38 kubectl basics
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../39-creating-gke-deployments/" class="md-nav__link">
+        39 creating gke deployments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-data-reliability-conference/" class="md-nav__link">
+        40 data reliability conference
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../41-persistent-storage-gke/" class="md-nav__link">
+        Persistent storage in GKE
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../42-creating-gke-deployments-from-shell/" class="md-nav__link">
+        42 creating gke deployments from shell
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../43-setting-up-react/" class="md-nav__link">
+        Steps to run react in local environment
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../44-redis-with-gcp-cloud-func/" class="md-nav__link">
+        44 redis with gcp cloud func
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dive-environments-and-conditions" class="md-nav__link">
+    Dive environments and conditions
+  </a>
+  
+    <nav class="md-nav" aria-label="Dive environments and conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temperature" class="md-nav__link">
+    Temperature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visibility" class="md-nav__link">
+    Visibility
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water-movement" class="md-nav__link">
+    Water movement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom-composition" class="md-nav__link">
+    Bottom composition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sunlight" class="md-nav__link">
+    Sunlight
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fresh-water-vs-salt-water" class="md-nav__link">
+    Fresh water vs salt water
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overhead-environments" class="md-nav__link">
+    Overhead environments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessing-conditions" class="md-nav__link">
+    Assessing conditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dive-with-limits" class="md-nav__link">
+    Dive with limits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acquatic-life" class="md-nav__link">
+    Acquatic life
+  </a>
+  
+    <nav class="md-nav" aria-label="Acquatic life">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hazardous-organisms" class="md-nav__link">
+    Hazardous organisms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aquatic-plant-hazards" class="md-nav__link">
+    Aquatic plant hazards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-aware" class="md-nav__link">
+    Project AWARE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diving-from-shore" class="md-nav__link">
+    Diving from shore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shore-diving-through-mild-surf" class="md-nav__link">
+    Shore diving through mild surf
+  </a>
+  
+    <nav class="md-nav" aria-label="Shore diving through mild surf">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#longshore-current" class="md-nav__link">
+    Longshore current
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rip-current" class="md-nav__link">
+    Rip current
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upwelling" class="md-nav__link">
+    Upwelling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tides" class="md-nav__link">
+    Tides
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diving-from-boats-preparations" class="md-nav__link">
+    Diving from boats - preparations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diving-from-boats-procedures" class="md-nav__link">
+    Diving from boats - procedures
+  </a>
+  
+    <nav class="md-nav" aria-label="Diving from boats - procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boat-diving-exit-procedure" class="md-nav__link">
+    Boat diving exit procedure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boat-diving-with-moderate-current" class="md-nav__link">
+    Boat diving with moderate current
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dive-boat-not-in-sight" class="md-nav__link">
+    Dive boat not in sight
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dive-planning" class="md-nav__link">
+    Dive planning
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>11 padi openwater sec3</h1>
+
+<h2 id="introduction">Introduction</h2>
 <p>This section is about planning the dive considering environment, personal limits and acquatic conditions.</p>
 <h2 id="dive-environments-and-conditions">Dive environments and conditions</h2>
 <ul>
@@ -520,50 +1616,48 @@
 </ul>
 <p>Example dive planning slate.
 <img alt="Dive Planning Slate" src="images/diveplanningslate.png" /></p>
-              
+
+
+
+
+
+                
+              </article>
             </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../10-padi-openwater-sec2/" class="btn btn-neutral float-left" title="10 padi openwater sec2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../12-padi-openwater-sec3-problem-management/" class="btn btn-neutral float-right" title="12 padi openwater sec3 problem management">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
+          
           
         </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-    
-      <span><a href="../10-padi-openwater-sec2/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../12-padi-openwater-sec3-problem-management/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
-
-</body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+    
+  </body>
 </html>
