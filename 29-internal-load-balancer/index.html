@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://tanviralam.com/29-internal-load-balancer/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Configuring an Internal Load Balancer - Tanvir's Notes</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Configuring an Internal Load Balancer";
+        var mkdocs_page_input_path = "29-internal-load-balancer.md";
+        var mkdocs_page_url = "/29-internal-load-balancer/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Tanvir's Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../01-linear-algebra-machine-learning/">Linear Algebra for Machine Learning</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../02-git_workflow/">Creating a repo</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../03-python-virtual-environments-with-jupyter/">What are Python Virtual Environments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../04-ecommerce-payments/">Structure</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../05-pubsub-google-clouds/">05 pubsub google clouds</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../07-tmux/">Tmux</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../08-using-system-clipboard-in-vim/">08 using system clipboard in vim</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../09-padi-openwater-sec1/">09 padi openwater sec1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../10-padi-openwater-sec2/">10 padi openwater sec2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../11-padi-openwater-sec3/">11 padi openwater sec3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../12-padi-openwater-sec3-problem-management/">12 padi openwater sec3 problem management</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../13-padi-openwater-sec3-equipment3/">13 padi openwater sec3 equipment3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../14-padi-openwater-sec3-skills2/">14 padi openwater sec3 skills2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../15-padi-openwater-sec4-equipment4/">15 padi openwater sec4 equipment4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../16-padi-openwater-sec4-diver4/">16 padi openwater sec4 diver4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../17-padi-openwater-sec4-divecomputers1/">17 padi openwater sec4 divecomputers1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../18-padi-openwater-sec4-skills4/">18 padi openwater sec4 skills4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../19-padi-openwater-sec5-divecomputers2/">19 padi openwater sec5 divecomputers2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../20-padi-openwater-sec5-diver5/">20 padi openwater sec5 diver5</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../21-padi-sec5-skills5/">21 padi sec5 skills5</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../22-ubuntu-bluetooth-uninstall-reinstall/">22 ubuntu bluetooth uninstall reinstall</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../23-advanced-big-query/">Objectives</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../24-freedomticket-week1-intro-to-selling/">24 freedomticket week1 intro to selling</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../25-gcp-essential-infrastructure-cloud-sql/">Implementing Cloud SQL</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../26-gcp-essential-infrastructure-monitoring/">Resource Monitoring</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../27-gcp-elastic-cloud-vpn/">Virtual Private Networks (VPN)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../28-http-load-balancer/">Configuring an HTTP Load Balancer with Autoscaling</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Configuring an Internal Load Balancer</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#task-1-configure-internal-traffic-and-health-check-firewall-rules">Task 1. Configure internal traffic and health check firewall rules.</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#explore-the-my-internal-app-network">Explore the my-internal-app network</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-the-firewall-rule-to-allow-traffic-from-any-sources-in-the-10100016-range">Create the firewall rule to allow traffic from any sources in the 10.10.0.0/16 range</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-the-health-check-rule">Create the health check rule</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-2-create-a-nat-configuration-using-cloud-router">Task 2: Create a NAT configuration using Cloud Router</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#create-the-cloud-router-instance">Create the Cloud Router instance</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-3-configure-instance-templates-and-create-instance-groups">Task 3. Configure instance templates and create instance groups</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configure-the-instance-templates">Configure the instance templates</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#create-the-managed-instance-groups">Create the managed instance groups</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#verify-the-backends">Verify the backends</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-4-configure-the-internal-load-balancer">Task 4. Configure the internal load balancer</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#start-the-configuration">Start the configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configure-the-regional-backend-service">Configure the regional backend service</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configure-the-frontend">Configure the frontend</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#review-and-create-the-internal-load-balancer">Review and create the internal load balancer</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-5-test-the-internal-load-balancer">Task 5. Test the internal load balancer</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../30-deployment-manager/">Automating the Deployment of Infrastructure Using Deployment Manager</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../31-aws-session/">31 aws session</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../32-gcp-cloud-build/">32 gcp cloud build</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../33-gcp-deploying-kubernetes/">33 gcp deploying kubernetes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../34-gcp-creating-kubernetes-engine-deployments/">Creating Google Kubernetes Engine Deployments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../35-gcp-persistent-volume-for-gke/">Configuring persistent volume for Google Kubernetes Engine</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../36-gcloud-basics/">Basic gcloud commands</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../37-migrate-for-anthos/">37 migrate for anthos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../38-kubectl-basics/">38 kubectl basics</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../39-creating-gke-deployments/">39 creating gke deployments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../40-data-reliability-conference/">40 data reliability conference</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../41-persistent-storage-gke/">Persistent storage in GKE</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../42-creating-gke-deployments-from-shell/">42 creating gke deployments from shell</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../43-setting-up-react/">Steps to run react in local environment</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../44-redis-with-gcp-cloud-func/">44 redis with gcp cloud func</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Tanvir's Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Configuring an Internal Load Balancer</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="configuring-an-internal-load-balancer">Configuring an Internal Load Balancer</h1>
+<h2 id="task-1-configure-internal-traffic-and-health-check-firewall-rules">Task 1. Configure internal traffic and health check firewall rules.</h2>
+<p>Configure firewall rules to allow internal traffic connectivity from sources in the 10.10.0.0/16 range. This rule allows incoming traffic from any client located in the subnet.</p>
+<p>Health checks determine which instances of a load balancer can receive new connections. For HTTP load balancing, the health check probes to your load-balanced instances come from addresses in the ranges 130.211.0.0/22 and 35.191.0.0/16. Your firewall rules must allow these connections.</p>
+<h3 id="explore-the-my-internal-app-network">Explore the my-internal-app network</h3>
+<p>The network my-internal-app with subnet-a and subnet-b and firewall rules for RDP, SSH, and ICMP traffic have been configured for you.</p>
+<p>In the Cloud Console, on the Navigation menu (Navigation menu), click VPC network &gt; VPC networks. Notice the my-internal-app network with its subnets: subnet-a and subnet-b.</p>
+<p>Each Google Cloud project starts with the default network. In addition, the my-internal-app network has been created for you as part of your network diagram.</p>
+<p>You will create the managed instance groups in subnet-a and subnet-b. Both subnets are in the us-central1 region because an internal load balancer is a regional service. The managed instance groups will be in different zones, making your service immune to zonal failures.</p>
+<h3 id="create-the-firewall-rule-to-allow-traffic-from-any-sources-in-the-10100016-range">Create the firewall rule to allow traffic from any sources in the 10.10.0.0/16 range</h3>
+<p>Create a firewall rule to allow traffic in the 10.10.0.0/16 subnet.</p>
+<p>On the Navigation menu (Navigation menu), click VPC network &gt; Firewall. Notice the app-allow-icmp and app-allow-ssh-rdp firewall rules.</p>
+<p>These firewall rules have been created for you.</p>
+<p>Click Create Firewall Rule.</p>
+<p>Specify the following, and leave the remaining settings as their defaults:</p>
+<p>Property    Value (type value or select option as specified)</p>
+<p>Name    fw-allow-lb-access</p>
+<p>Network my-internal-app</p>
+<p>Targets Specified target tags</p>
+<p>Target tags backend-service</p>
+<p>Source filter   IP ranges</p>
+<p>Source IP ranges    10.10.0.0/16</p>
+<p>Protocols and ports Allow all</p>
+<p>Click create.</p>
+<h3 id="create-the-health-check-rule">Create the health check rule</h3>
+<p>Create a firewall rule to allow health checks.</p>
+<p>On the Navigation menu (Navigation menu), click VPC network &gt; Firewall.</p>
+<p>Click Create Firewall Rule.</p>
+<p>Specify the following, and leave the remaining settings as their defaults:</p>
+<p>Property    Value (type value or select option as specified)</p>
+<p>Name    fw-allow-health-checks</p>
+<p>Network my-internal-app</p>
+<p>Targets Specified target tags</p>
+<p>Target tags backend-service</p>
+<p>Source filter   IP Ranges</p>
+<p>Source IP ranges    130.211.0.0/22 and 35.191.0.0/16</p>
+<p>Protocols and ports Specified protocols and ports</p>
+<p>Make sure to include the /22 and /16 in the Source IP ranges.</p>
+<p>For tcp, specify port 80.</p>
+<p>Click Create.</p>
+<h2 id="task-2-create-a-nat-configuration-using-cloud-router">Task 2: Create a NAT configuration using Cloud Router</h2>
+<p>The Google Cloud VM backend instances that you setup in Task 3 will not be configured with external IP addresses.</p>
+<p>Instead, you will setup the Cloud NAT service to allow these VM instances to send outbound traffic only through the Cloud NAT, and receive inbound traffic through the load balancer.</p>
+<h3 id="create-the-cloud-router-instance">Create the Cloud Router instance</h3>
+<p>In the Cloud Console, on the Navigation menu (Navigation menu), click Network services &gt; Cloud NAT.</p>
+<p>Click Get started.</p>
+<p>Specify the following, and leave the remaining settings as their defaults:</p>
+<p>Property    Value (type value or select option as specified)</p>
+<p>Gateway name    nat-config</p>
+<p>VPC network my-internal-app</p>
+<p>Region  us-central1</p>
+<p>Click Cloud Router, and select Create new router.</p>
+<p>For Name, type nat-router-us-central1.</p>
+<p>Click Create.</p>
+<p>In Create a NAT gateway, click Create.</p>
+<p>Wait until the NAT Gateway Status changes to Running before moving onto the next task.</p>
+<h2 id="task-3-configure-instance-templates-and-create-instance-groups">Task 3. Configure instance templates and create instance groups</h2>
+<p>A managed instance group uses an instance template to create a group of identical instances. Use these to create the backends of the internal load balancer.</p>
+<h2 id="configure-the-instance-templates">Configure the instance templates</h2>
+<p>An instance template is an API resource that you can use to create VM instances and managed instance groups. Instance templates define the machine type, boot disk image, subnet, labels, and other instance properties. Create an instance template for both subnets of the my-internal-app network.</p>
+<p>On the Navigation menu (Navigation menu), click Compute Engine &gt; Instance templates.</p>
+<p>Click Create instance template.</p>
+<p>For Name, type instance-template-1</p>
+<p>Under Machine configuration, For Series, Select N1.</p>
+<p>Machine type f1-micro(1 vCPU).</p>
+<p>Click Management, security, disks, networking, sole tenancy.</p>
+<p>Click Management.</p>
+<p>Under Metadata, specify the following:</p>
+<p>Key Value</p>
+<p>startup-script-url  gs://cloud-training/gcpnet/ilb/startup.sh</p>
+<p>The startup-script-url specifies a script that is executed when instances are started. This script installs Apache and changes the welcome page to include the client IP and the name, region, and zone of the VM instance. You can explore this script here.</p>
+<pre><code>#! /bin/bash
+
+apt-get update 
+apt-get install -y apache2 php
+apt-get install -y wget
+cd /var/www/html
+rm index.html -f
+rm index.php -f
+wget https://storage.googleapis.com/cloud-training/gcpnet/ilb/index.php
+META_REGION_STRING=$(curl &quot;http://metadata.google.internal/computeMetadata/v1/instance/zone&quot; -H &quot;Metadata-Flavor: Google&quot;)
+REGION=`echo &quot;$META_REGION_STRING&quot; | awk -F/ '{print $4}'`
+sed -i &quot;s|region-here|$REGION|&quot; index.php
+</code></pre>
+<p>Click Networking.</p>
+<p>For Network interfaces, specify the following, and leave the remaining settings as their defaults:</p>
+<p>Property    Value (type value or select option as specified)</p>
+<p>Network my-internal-app</p>
+<p>Subnet  subnet-a</p>
+<p>Network tags    backend-service</p>
+<p>External IP None</p>
+<p>The network tag backend-service ensures that the firewall rule to allow traffic from any sources in the 10.10.0.0/16 subnet and the Health Check firewall rule applies to these instances.</p>
+<p>Click Create. Wait for the instance template to be created.</p>
+<p>Create another instance template for subnet-b by copying instance-template-1:</p>
+<p>Select the instance-template-1 and click Copy.</p>
+<p>Click Management, security, disks, networking, sole tenancy.</p>
+<p>Click Networking.</p>
+<p>For Network interfaces, select subnet-b as the Subnet.</p>
+<p>Click Create.</p>
+<h3 id="create-the-managed-instance-groups">Create the managed instance groups</h3>
+<p>Create a managed instance group in subnet-a (us-central1-a) and subnet-b (us-central1-b).</p>
+<p>On the Navigation menu (Navigation menu), click Compute Engine &gt; Instance groups.</p>
+<p>Click Create Instance group.</p>
+<p>Specify the following, and leave the remaining settings as their defaults:</p>
+<p>Property    Value (type value or select option as specified)</p>
+<p>Name    instance-group-1</p>
+<p>Location    Single zone</p>
+<p>Region  us-central1</p>
+<p>Zone    us-central1-a</p>
+<p>Instance template   instance-template-1</p>
+<p>Autoscaling &gt; metrics type (Click the pencil edit icon) CPU utilization</p>
+<p>Target CPU utilization  80, click Done.</p>
+<p>Cool-down period    45</p>
+<p>Minimum number of instances 1</p>
+<p>Maximum number of instances 5</p>
+<p>Managed instance groups offer autoscaling capabilities that allow you to automatically add or remove instances from a managed instance group based on increases or decreases in load. Autoscaling helps your applications gracefully handle increases in traffic and reduces cost when the need for resources is lower. Just define the autoscaling policy, and the autoscaler performs automatic scaling based on the measured load.</p>
+<p>Click Create.</p>
+<p>Repeat the same procedure for instance-group-2 in us-central1-b:</p>
+<p>Click Create Instance group.</p>
+<p>Specify the following, and leave the remaining settings as their defaults:</p>
+<p>Property    Value (type value or select option as specified)</p>
+<p>Name    instance-group-2</p>
+<p>Location    Single zone</p>
+<p>Region  us-central1</p>
+<p>Zone    us-central1-b</p>
+<p>Instance template   instance-template-2</p>
+<p>Autoscaling &gt; metric type (Click the pencil edit icon)  CPU utilization</p>
+<p>Target CPU utilization  80, click Done.</p>
+<p>Cool-down period    45</p>
+<p>Minimum number of instances 1</p>
+<p>Maximum number of instances 5</p>
+<p>Click Create.</p>
+<h2 id="verify-the-backends">Verify the backends</h2>
+<p>Verify that VM instances are being created in both subnets and create a utility VM to access the backends' HTTP sites.</p>
+<p>On the Navigation menu, click Compute Engine &gt; VM instances. Notice two instances that start with instance-group-1 and instance-group-2.</p>
+<p>These instances are in separate zones, and their internal IP addresses are part of the subnet-a and subnet-b CIDR blocks.</p>
+<p>Click Create Instance.</p>
+<p>Specify the following, and leave the remaining settings as their defaults:</p>
+<p>Property    Value (type value or select option as specified)</p>
+<p>Name    utility-vm</p>
+<p>Region  us-central1</p>
+<p>Zone    us-central1-f</p>
+<p>Series  N1</p>
+<p>Machine type    f1-micro (1 vCPU)</p>
+<p>Boot disk   Debian GNU/Linux 10 (buster)</p>
+<p>Click Management, security, disks, networking, sole tenancy.</p>
+<p>Click Networking.</p>
+<p>For Network interfaces, click the pencil icon to edit.</p>
+<p>Specify the following, and leave the remaining settings as their defaults:</p>
+<p>Property    Value (type value or select option as specified)</p>
+<p>Network my-internal-app</p>
+<p>Subnetwork  subnet-a</p>
+<p>Primary internal IP Ephemeral (Custom)</p>
+<p>Custom ephemeral IP address 10.10.20.50</p>
+<p>External IP None</p>
+<p>Click Done.</p>
+<p>Click Create.</p>
+<p>Note that the internal IP addresses for the backends are 10.10.20.2 and 10.10.30.2.</p>
+<p>If these IP addresses are different, replace them in the two curl commands below.</p>
+<p>For utility-vm, click SSH to launch a terminal and connect. If you see the Connection via Cloud Identity-Aware Proxy Failed popup, click Retry.</p>
+<p>To verify the welcome page for instance-group-1-xxxx, run the following command:</p>
+<pre><code>curl 10.10.20.2
+</code></pre>
+<p>The output should look like this (do not copy; this is example output):</p>
+<pre><code>&lt;h1&gt;Internal Load Balancing Lab&lt;/h1&gt;&lt;h2&gt;Client IP&lt;/h2&gt;Your IP address : 10.10.20.50&lt;h2&gt;Hostname&lt;/h2&gt;Server Hostname:
+ instance-group-1-1zn8&lt;h2&gt;Server Location&lt;/h2&gt;Region and Zone: us-central1-a
+</code></pre>
+<p>To verify the welcome page for instance-group-2-xxxx, run the following command:</p>
+<pre><code>curl 10.10.30.2
+</code></pre>
+<p>The output should look like this (do not copy; this is example output):</p>
+<pre><code>&lt;h1&gt;Internal Load Balancing Lab&lt;/h1&gt;&lt;h2&gt;Client IP&lt;/h2&gt;Your IP address : 10.10.20.50&lt;h2&gt;Hostname&lt;/h2&gt;Server Hostname:
+ instance-group-2-q5wp&lt;h2&gt;Server Location&lt;/h2&gt;Region and Zone: us-central1-b
+</code></pre>
+<p>This will be useful when verifying that the internal load balancer sends traffic to both backends.</p>
+<p>Close the SSH terminal to utility-vm</p>
+<h2 id="task-4-configure-the-internal-load-balancer">Task 4. Configure the internal load balancer</h2>
+<p>Configure the internal load balancer to balance traffic between the two backends (instance-group-1 in us-central1-a and instance-group-2 in us-central1-b)</p>
+<h3 id="start-the-configuration">Start the configuration</h3>
+<p>In the Cloud Console, on the Navigation menu (Navigation menu), click Network Services &gt; Load balancing.
+Click Create load balancer.
+Under TCP Load Balancing, click Start configuration.
+For Internet facing or internal only, select Only between my VMs.
+Choosing Only between my VMs makes this load balancer internal. This choice requires the backends to be in a single region (us-central1) and does not allow offloading TCP processing to the load balancer.</p>
+<p>Click Continue.</p>
+<p>For Name, type my-ilb.</p>
+<h3 id="configure-the-regional-backend-service">Configure the regional backend service</h3>
+<p>The backend service monitors instance groups and prevents them from exceeding configured usage.</p>
+<p>Click Backend configuration.</p>
+<p>Specify the following, and leave the remaining settings as their defaults:</p>
+<p>Property    Value (select option as specified)</p>
+<p>Region  us-central1</p>
+<p>Network my-internal-app</p>
+<p>Instance group  instance-group-1 (us-central1-a)</p>
+<p>Click Done.</p>
+<p>Click Add backend.</p>
+<p>For Instance group, select instance-group-2 (us-central1-b).</p>
+<p>Click Done.</p>
+<p>For Health Check, select Create a health check.</p>
+<p>Specify the following, and leave the remaining settings as their defaults:</p>
+<p>Property    Value (select option as specified)</p>
+<p>Name    my-ilb-health-check</p>
+<p>Protocol    TCP</p>
+<p>Port    80</p>
+<p>Check interval  10 sec</p>
+<p>Timeout 5 sec</p>
+<p>Healthy threshold   2</p>
+<p>Unhealthy threshold 3</p>
+<p>Health checks determine which instances can receive new connections. This HTTP health check polls instances every 10 seconds, waits up to 5 seconds for a response, and treats 2 successful or 3 failed attempts as healthy threshold or unhealthy threshold, respectively.</p>
+<p>Click Save and continue.</p>
+<p>Verify that there is a blue check mark next to Backend configuration in the Cloud Console. If there isn't, double-check that you have completed all the steps above.</p>
+<h3 id="configure-the-frontend">Configure the frontend</h3>
+<p>The frontend forwards traffic to the backend.</p>
+<p>Click Frontend configuration.</p>
+<p>Specify the following, and leave the remaining settings as their defaults:</p>
+<p>Property    Value (type value or select option as specified)</p>
+<p>Subnetwork  subnet-b</p>
+<p>Internal IP &gt; IP address    Reserve static internal IP address</p>
+<p>Specify the following, and leave the remaining settings as their defaults:</p>
+<p>Property    Value (type value or select option as specified)</p>
+<p>Name    my-ilb-ip</p>
+<p>Static IP address   Let me choose</p>
+<p>Custom IP address   10.10.30.5</p>
+<p>Click Reserve.</p>
+<p>For Ports, type 80.</p>
+<p>Click Done.</p>
+<h3 id="review-and-create-the-internal-load-balancer">Review and create the internal load balancer</h3>
+<p>Click Review and finalize.
+Review the Backend and Frontend.
+Click Create. Wait for the load balancer to be created before moving to the next task.</p>
+<h2 id="task-5-test-the-internal-load-balancer">Task 5. Test the internal load balancer</h2>
+<p>Verify that the my-ilb IP address forwards traffic to instance-group-1 in us-central1-a and instance-group-2 in us-central1-b.</p>
+<p>Access the internal load balancer
+On the Navigation menu, click Compute Engine &gt; VM instances.</p>
+<p>For utility-vm, click SSH to launch a terminal and connect.</p>
+<p>To verify that the internal load balancer forwards traffic, run the following command:</p>
+<pre><code>curl 10.10.30.5
+</code></pre>
+<p>The output should look like this (do not copy; this is example output):</p>
+<pre><code>&lt;h1&gt;Internal Load Balancing Lab&lt;/h1&gt;&lt;h2&gt;Client IP&lt;/h2&gt;Your IP address : 10.10.20.50&lt;h2&gt;Hostname&lt;/h2&gt;Server Hostname:
+ instance-group-2-1zn8&lt;h2&gt;Server Location&lt;/h2&gt;Region and Zone: us-central1-b
+</code></pre>
+<p>As expected, traffic is forwarded from the internal load balancer (10.10.30.5) to the backend.</p>
+<p>Run the same command a couple of times</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../28-http-load-balancer/" class="btn btn-neutral float-left" title="Configuring an HTTP Load Balancer with Autoscaling"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../30-deployment-manager/" class="btn btn-neutral float-right" title="Automating the Deployment of Infrastructure Using Deployment Manager">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../28-http-load-balancer/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../30-deployment-manager/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://tanviralam.com/32-gcp-cloud-build/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>32 gcp cloud build - Tanvir's Notes</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "32 gcp cloud build";
+        var mkdocs_page_input_path = "32-gcp-cloud-build.md";
+        var mkdocs_page_url = "/32-gcp-cloud-build/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Tanvir's Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../01-linear-algebra-machine-learning/">Linear Algebra for Machine Learning</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../02-git_workflow/">Creating a repo</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../03-python-virtual-environments-with-jupyter/">What are Python Virtual Environments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../04-ecommerce-payments/">Structure</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../05-pubsub-google-clouds/">05 pubsub google clouds</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../07-tmux/">Tmux</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../08-using-system-clipboard-in-vim/">08 using system clipboard in vim</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../09-padi-openwater-sec1/">09 padi openwater sec1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../10-padi-openwater-sec2/">10 padi openwater sec2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../11-padi-openwater-sec3/">11 padi openwater sec3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../12-padi-openwater-sec3-problem-management/">12 padi openwater sec3 problem management</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../13-padi-openwater-sec3-equipment3/">13 padi openwater sec3 equipment3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../14-padi-openwater-sec3-skills2/">14 padi openwater sec3 skills2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../15-padi-openwater-sec4-equipment4/">15 padi openwater sec4 equipment4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../16-padi-openwater-sec4-diver4/">16 padi openwater sec4 diver4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../17-padi-openwater-sec4-divecomputers1/">17 padi openwater sec4 divecomputers1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../18-padi-openwater-sec4-skills4/">18 padi openwater sec4 skills4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../19-padi-openwater-sec5-divecomputers2/">19 padi openwater sec5 divecomputers2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../20-padi-openwater-sec5-diver5/">20 padi openwater sec5 diver5</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../21-padi-sec5-skills5/">21 padi sec5 skills5</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../22-ubuntu-bluetooth-uninstall-reinstall/">22 ubuntu bluetooth uninstall reinstall</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../23-advanced-big-query/">Objectives</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../24-freedomticket-week1-intro-to-selling/">24 freedomticket week1 intro to selling</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../25-gcp-essential-infrastructure-cloud-sql/">Implementing Cloud SQL</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../26-gcp-essential-infrastructure-monitoring/">Resource Monitoring</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../27-gcp-elastic-cloud-vpn/">Virtual Private Networks (VPN)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../28-http-load-balancer/">Configuring an HTTP Load Balancer with Autoscaling</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../29-internal-load-balancer/">Configuring an Internal Load Balancer</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../30-deployment-manager/">Automating the Deployment of Infrastructure Using Deployment Manager</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../31-aws-session/">31 aws session</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">32 gcp cloud build</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../33-gcp-deploying-kubernetes/">33 gcp deploying kubernetes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../34-gcp-creating-kubernetes-engine-deployments/">Creating Google Kubernetes Engine Deployments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../35-gcp-persistent-volume-for-gke/">Configuring persistent volume for Google Kubernetes Engine</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../36-gcloud-basics/">Basic gcloud commands</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../37-migrate-for-anthos/">37 migrate for anthos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../38-kubectl-basics/">38 kubectl basics</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../39-creating-gke-deployments/">39 creating gke deployments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../40-data-reliability-conference/">40 data reliability conference</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../41-persistent-storage-gke/">Persistent storage in GKE</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../42-creating-gke-deployments-from-shell/">42 creating gke deployments from shell</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../43-setting-up-react/">Steps to run react in local environment</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../44-redis-with-gcp-cloud-func/">44 redis with gcp cloud func</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Tanvir's Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>32 gcp cloud build</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="enable-apis">Enable APIs</h2>
+<ul>
+<li>Cloud Build API</li>
+<li>Container Registry API</li>
+</ul>
+<h2 id="building-containers-with-dockerfile-and-cloud-build">Building Containers with DockerFile and Cloud Build</h2>
+<p>You can write build configuration files to provide instructions to Cloud Build as to which tasks to perform when building a container. These build files can fetch dependencies, run unit tests, analyses and more. In this task, you'll create a DockerFile and use it as a build configuration script with Cloud Build. You will also create a simple shell script (quickstart.sh) which will represent an application inside the container.</p>
+<p>On the Google Cloud Console title bar, click Activate Cloud Shell.</p>
+<p>When prompted, click Continue.</p>
+<p>Cloud Shell opens at the bottom of the Google Cloud Console window.</p>
+<p>Create an empty <code>quickstart.sh</code></p>
+<p>Add:</p>
+<pre><code>#!/bin/sh
+echo &quot;Hello, world! The time is $(date).&quot;
+</code></pre>
+<p>Create an Dockerfile</p>
+<pre><code>FROM alpine
+COPY quickstart.sh /
+CMD [&quot;/quickstart.sh&quot;]
+</code></pre>
+<p>In Cloud Shell, run the following command to make the quickstart.sh script executable.</p>
+<pre><code>chmod +x quickstart.sh
+</code></pre>
+<p>In Cloud Shell, run the following command to build the Docker container image in Cloud Build.</p>
+<pre><code>gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/quickstart-image .
+</code></pre>
+<p>Docker image is built and pushed to Container Registry.</p>
+<h2 id="building-containers-with-a-build-configuration-file-and-cloud-build">Building Containers with a build configuration file and Cloud Build</h2>
+<p>Cloud Build also supports custom build configuration files. In this task you will incorporate an existing Docker container using a custom YAML-formatted build file with Cloud Build.</p>
+<p>In Cloud Shell enter the following command to clone the repository to the lab Cloud Shell.</p>
+<pre><code>git clone https://github.com/GoogleCloudPlatform/training-data-analyst
+</code></pre>
+<p>Create a soft link as a shortcut to the working directory.</p>
+<pre><code>ln -s ~/training-data-analyst/courses/ak8s/v1.1 ~/ak8s
+</code></pre>
+<p>Change to the directory that contains the sample files for this lab.</p>
+<pre><code>cd ~/ak8s/Cloud_Build/a
+</code></pre>
+<p>A sample custom cloud build configuration file called cloudbuild.yaml has been provided for you in this directory as well as copies of the Dockerfile and the quickstart.sh script you created in the first task.</p>
+<p>View the could build configuration file.</p>
+<pre><code>cat cloudbuild.yaml
+</code></pre>
+<pre><code>steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/quickstart-image', '.' ]
+images:
+- 'gcr.io/$PROJECT_ID/quickstart-image'
+</code></pre>
+<p>This file instructs Cloud Build to use Docker to build an image using the Dockerfile specification in the current local directory, tag it with <code>gcr.io/$PROJECT_ID/quickstart-image</code> (<code>$PROJECT_ID</code> is a substitution variable automatically populated by Cloud Build with the project ID of the associated project) and then push that image to Container Registry.</p>
+<p>In Cloud Shell, execute the following command to start a Cloud Build using cloudbuild.yaml as the build configuration file:</p>
+<pre><code>gcloud builds submit --config cloudbuild.yaml .
+</code></pre>
+<p>The build output to Cloud Shell should be the same as before. When the build completes, a new version of the same image is pushed to Container Registry.</p>
+<h2 id="building-and-testing-containers-with-a-build-configuration-file-and-cloud-build">Building and Testing Containers with a build configuration file and Cloud Build</h2>
+<p>The true power of custom build configuration files is their ability to perform other actions, in parallel or in sequence, in addition to simply building containers: running tests on your newly built containers, pushing them to various destinations, and even deploying them to Kubernetes Engine. In this lab, we will see a simple example: a build configuration file that tests the container it built and reports the result to its calling environment.</p>
+<p>In Cloud Shell, change to the directory that contains the sample files for this lab.</p>
+<pre><code>cd ~/ak8s/Cloud_Build/b
+</code></pre>
+<p>Three files are necessary for this step.
+<code>quickstart.sh</code></p>
+<pre><code>#!/bin/sh
+if [ -z &quot;$1&quot; ]
+then
+        echo &quot;Hello, world! The time is $(date).&quot;
+        exit 0
+else 
+        exit 1
+fi
+</code></pre>
+<p><code>cloudbuild.yaml</code></p>
+<pre><code>steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/quickstart-image', '.' ]
+- name: 'gcr.io/$PROJECT_ID/quickstart-image'
+  args: ['fail']
+images:
+- 'gcr.io/$PROJECT_ID/quickstart-image
+</code></pre>
+<p><code>Dockerfile</code></p>
+<pre><code>FROM alpine
+COPY quickstart.sh /
+CMD [&quot;/quickstart.sh&quot;]
+</code></pre>
+<p>In Cloud Shell, execute the following command to start a Cloud Build using cloudbuild.yaml as the build configuration file:</p>
+<pre><code>gcloud builds submit --config cloudbuild.yaml .
+</code></pre>
+<p>Output from the command that ends with <code>FAILURE</code></p>
+<p>Confirm that your command shell knows that the build failed</p>
+<pre><code>echo $?
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../31-aws-session/" class="btn btn-neutral float-left" title="31 aws session"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../33-gcp-deploying-kubernetes/" class="btn btn-neutral float-right" title="33 gcp deploying kubernetes">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../31-aws-session/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../33-gcp-deploying-kubernetes/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

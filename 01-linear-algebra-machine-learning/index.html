@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://tanviralam.com/01-linear-algebra-machine-learning/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Linear Algebra for Machine Learning - Tanvir's Notes</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Linear Algebra for Machine Learning";
+        var mkdocs_page_input_path = "01-linear-algebra-machine-learning.md";
+        var mkdocs_page_url = "/01-linear-algebra-machine-learning/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Tanvir's Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Linear Algebra for Machine Learning</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#linear-algebra-concepts">Linear algebra concepts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#vector-shows-a-location">Vector shows a location</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-basis-vectors">The basis vectors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#linear-combination-of-vectors-and-span">Linear combination of vectors and span</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#linear-transformation-of-the-plane">Linear transformation of the plane</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#matrix">Matrix</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vector-dot-products">Vector dot products</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#determinant">Determinant</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rank">Rank</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inverse-matrices">Inverse matrices</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#change-of-basis">Change of basis </a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#eigenvectors-and-eigenvalues">Eigenvectors and eigenvalues</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extending-to-abstract-world-of-data">Extending to abstract world of data</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../02-git_workflow/">Creating a repo</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../03-python-virtual-environments-with-jupyter/">What are Python Virtual Environments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../04-ecommerce-payments/">Structure</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../05-pubsub-google-clouds/">05 pubsub google clouds</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../07-tmux/">Tmux</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../08-using-system-clipboard-in-vim/">08 using system clipboard in vim</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../09-padi-openwater-sec1/">09 padi openwater sec1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../10-padi-openwater-sec2/">10 padi openwater sec2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../11-padi-openwater-sec3/">11 padi openwater sec3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../12-padi-openwater-sec3-problem-management/">12 padi openwater sec3 problem management</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../13-padi-openwater-sec3-equipment3/">13 padi openwater sec3 equipment3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../14-padi-openwater-sec3-skills2/">14 padi openwater sec3 skills2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../15-padi-openwater-sec4-equipment4/">15 padi openwater sec4 equipment4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../16-padi-openwater-sec4-diver4/">16 padi openwater sec4 diver4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../17-padi-openwater-sec4-divecomputers1/">17 padi openwater sec4 divecomputers1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../18-padi-openwater-sec4-skills4/">18 padi openwater sec4 skills4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../19-padi-openwater-sec5-divecomputers2/">19 padi openwater sec5 divecomputers2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../20-padi-openwater-sec5-diver5/">20 padi openwater sec5 diver5</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../21-padi-sec5-skills5/">21 padi sec5 skills5</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../22-ubuntu-bluetooth-uninstall-reinstall/">22 ubuntu bluetooth uninstall reinstall</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../23-advanced-big-query/">Objectives</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../24-freedomticket-week1-intro-to-selling/">24 freedomticket week1 intro to selling</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../25-gcp-essential-infrastructure-cloud-sql/">Implementing Cloud SQL</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../26-gcp-essential-infrastructure-monitoring/">Resource Monitoring</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../27-gcp-elastic-cloud-vpn/">Virtual Private Networks (VPN)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../28-http-load-balancer/">Configuring an HTTP Load Balancer with Autoscaling</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../29-internal-load-balancer/">Configuring an Internal Load Balancer</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../30-deployment-manager/">Automating the Deployment of Infrastructure Using Deployment Manager</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../31-aws-session/">31 aws session</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../32-gcp-cloud-build/">32 gcp cloud build</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../33-gcp-deploying-kubernetes/">33 gcp deploying kubernetes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../34-gcp-creating-kubernetes-engine-deployments/">Creating Google Kubernetes Engine Deployments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../35-gcp-persistent-volume-for-gke/">Configuring persistent volume for Google Kubernetes Engine</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../36-gcloud-basics/">Basic gcloud commands</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../37-migrate-for-anthos/">37 migrate for anthos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../38-kubectl-basics/">38 kubectl basics</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../39-creating-gke-deployments/">39 creating gke deployments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../40-data-reliability-conference/">40 data reliability conference</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../41-persistent-storage-gke/">Persistent storage in GKE</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../42-creating-gke-deployments-from-shell/">42 creating gke deployments from shell</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../43-setting-up-react/">Steps to run react in local environment</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../44-redis-with-gcp-cloud-func/">44 redis with gcp cloud func</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Tanvir's Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Linear Algebra for Machine Learning</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="linear-algebra-foundations-for-machine-learning">Linear Algebra Foundations for Machine Learning</h1>
+<p><em>Updated on 10/26/2019</em></p>
+<p>Linear algebra is a tool to help manage large data sets. It comes with techniques that makes manipulation of data very convenient.</p>
+<p>However, it makes more sense when described using geometry. I will describe it using only a two dimensional plane for sake of visual clarity.</p>
+<p>A 2-D plane means a data set with only two entries. But same ideas are application to n-dimensional plane or data sets with n entries.</p>
+<p>Most of the heavy work in linear algebra can be handled using computers. But these fundamental ideas are key to understanding what is happening under the hood.</p>
+<p>I drew in heavily from the excellent YouTube playlist called <a href="https://www.youtube.com/watch?v=fNk_zzaMoSs&amp;list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">The Essence of Linear Algebra</a> from <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a>.</p>
+<p>In this playlist, Grant Sanderson explains the ideas using simple geometric operations using lines and dots on paper, i.e., a two dimensional plane.</p>
+<p>Here is what I learnt.</p>
+<h2 id="linear-algebra-concepts">Linear algebra concepts</h2>
+<p>Linear algebra involves writing numbers in columns (), called vectors and boxes (), called matrices.</p>
+<h3 id="vector-shows-a-location">Vector shows a location</h3>
+<p>A vector, single column of numbers (3, 5) represents a point on a cartesian 2-D plane, or any n-D space for that matter.</p>
+<p>You need two things to make this work-
+1. Define a origin (0, 0) from where the vector points to the location of the point.
+2. Define the units of direction in x and y axes.  </p>
+<h3 id="the-basis-vectors">The basis vectors</h3>
+<p>The unit vectors are called basis vectors. They tell you how far to move from the origin and in which direction. The basis vectors along the x-axis, y-axis and z-axis are called i, j and k respectively.</p>
+<h3 id="linear-combination-of-vectors-and-span">Linear combination of vectors and span</h3>
+<p>Any point on the 2-D plane can be reached with sum of two or more vectors.</p>
+<p>However, its not possible when two vectors are parallel. In that case, all possible linear combinations are on a straight line.</p>
+<p>There is also a third possibility, when the two vectors are zeros, no linear combination will get you anywhere from zero.</p>
+<p>The span of vectors v and w is the set of all their linear combinations.</p>
+<p>In a 3-D space, a span of 2 vectors will most likely be a 2-D plane, or a line if they are parallel. A span of 3 vectors in the same plane will cover the entire 3-D space, or a plane, or a line, or, in the most extreme case, just the origin.</p>
+<h3 id="linear-transformation-of-the-plane">Linear transformation of the plane</h3>
+<p>If you stretch, skew, rotate or invert the vector plane keeping-
+* the same origin same, and
+* grid lines parallel to one another,
+then it is called a linear transformation of the plane.</p>
+<p>The 2-D plane doesn't have to be with all square grids. We can define a plane where the axes are not perpendicular to one another.</p>
+<p>Linear transformation lets us define a vector on one plane using basis vectors of another plane.</p>
+<h3 id="matrix">Matrix</h3>
+<p>A matrix is just a row of vectors that defines a linear transformation. The first column tells where i lands, the second column defines where j lands, and so forth.</p>
+<h3 id="vector-dot-products">Vector dot products</h3>
+<p>When you multiple two vectors using dot product, you get the area of the parallelogram enclosed by the vectors. For a 3-D plane, this will be the volume.</p>
+<h3 id="determinant">Determinant</h3>
+<p>When you transform a plane using a matrix, for example, skew it. The area enclosed by vectors in that plane changes. Determinant tells you by how much the area changes.</p>
+<p>When talking about a 3-D plane, the determinant shows the change of volume.</p>
+<p>When the output of a transformation reduces the 2-D plane into a line, the determinant is zero.</p>
+<h3 id="rank">Rank</h3>
+<p>The number of dimensions of a the output of transformation is called rank.</p>
+<p>When you apply a matrix on a 2-D plane and the output is a line, we call it has a rank of 1.</p>
+<h3 id="inverse-matrices">Inverse matrices</h3>
+<p>An inverse matrix completes the transformation in reverse.</p>
+<p>The inverse cannot be found if-
+1. The rank of transformation &lt; initial dimensions in the space (for example, you squish a 2-D plane into a line)
+2. The determinant is zero</p>
+<h3 id="change-of-basis">Change of basis <Incomplete></h3>
+<p>Matrices transform your vector space. In other words, if there is a vector space defined by your friend L,  vectors in your vector space.</p>
+<p>How do you explain your vectors in terms of Victor's world?</p>
+<p>Lets say matrix A transforms your basis to Victor's world. Therefore, A-1 does the opposite, it tells you where any vector in Victor's world lands in your world.</p>
+<h3 id="eigenvectors-and-eigenvalues">Eigenvectors and eigenvalues</h3>
+<p>When you apply a matrix on a plane, the vectors change direction and are scaled. The vectors that remain on their own span, are called eigenvectors. The value by which these special vectors are scaled is called a eigenvalues.</p>
+<p>For example, if the transformation is stretching 2x along the horizontal axis, the x-axis is an eigenvector with eigenvalue of 2.</p>
+<p>Additionally, for a 3-D plane, the eigenvectors with eigenvalues of 1 are rotational axis.</p>
+<p>Av = lambda*v, where v is eigenvector and lambda is the eigenvalue.</p>
+<h2 id="extending-to-abstract-world-of-data">Extending to abstract world of data</h2>
+<p>These ideas are explained using a 2-D, and sometimes, a 3-D plane. But you can (somewhat) easily extend it to n-D environment. Even abstract functions such as file compression or dimension reduction, when thought in light of geometric manipulation of space, starts making sense!</p>
+<p>This is part of ongoing series on my machine learning training.</p>
+<p>Please let me know what you think :)</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Welcome to MkDocs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../02-git_workflow/" class="btn btn-neutral float-right" title="Creating a repo">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../02-git_workflow/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

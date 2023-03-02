@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://tanviralam.com/41-persistent-storage-gke/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Persistent storage in GKE - Tanvir's Notes</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Persistent storage in GKE";
+        var mkdocs_page_input_path = "41-persistent-storage-gke.md";
+        var mkdocs_page_url = "/41-persistent-storage-gke/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Tanvir's Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../01-linear-algebra-machine-learning/">Linear Algebra for Machine Learning</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../02-git_workflow/">Creating a repo</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../03-python-virtual-environments-with-jupyter/">What are Python Virtual Environments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../04-ecommerce-payments/">Structure</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../05-pubsub-google-clouds/">05 pubsub google clouds</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../07-tmux/">Tmux</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../08-using-system-clipboard-in-vim/">08 using system clipboard in vim</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../09-padi-openwater-sec1/">09 padi openwater sec1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../10-padi-openwater-sec2/">10 padi openwater sec2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../11-padi-openwater-sec3/">11 padi openwater sec3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../12-padi-openwater-sec3-problem-management/">12 padi openwater sec3 problem management</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../13-padi-openwater-sec3-equipment3/">13 padi openwater sec3 equipment3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../14-padi-openwater-sec3-skills2/">14 padi openwater sec3 skills2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../15-padi-openwater-sec4-equipment4/">15 padi openwater sec4 equipment4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../16-padi-openwater-sec4-diver4/">16 padi openwater sec4 diver4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../17-padi-openwater-sec4-divecomputers1/">17 padi openwater sec4 divecomputers1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../18-padi-openwater-sec4-skills4/">18 padi openwater sec4 skills4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../19-padi-openwater-sec5-divecomputers2/">19 padi openwater sec5 divecomputers2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../20-padi-openwater-sec5-diver5/">20 padi openwater sec5 diver5</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../21-padi-sec5-skills5/">21 padi sec5 skills5</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../22-ubuntu-bluetooth-uninstall-reinstall/">22 ubuntu bluetooth uninstall reinstall</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../23-advanced-big-query/">Objectives</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../24-freedomticket-week1-intro-to-selling/">24 freedomticket week1 intro to selling</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../25-gcp-essential-infrastructure-cloud-sql/">Implementing Cloud SQL</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../26-gcp-essential-infrastructure-monitoring/">Resource Monitoring</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../27-gcp-elastic-cloud-vpn/">Virtual Private Networks (VPN)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../28-http-load-balancer/">Configuring an HTTP Load Balancer with Autoscaling</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../29-internal-load-balancer/">Configuring an Internal Load Balancer</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../30-deployment-manager/">Automating the Deployment of Infrastructure Using Deployment Manager</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../31-aws-session/">31 aws session</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../32-gcp-cloud-build/">32 gcp cloud build</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../33-gcp-deploying-kubernetes/">33 gcp deploying kubernetes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../34-gcp-creating-kubernetes-engine-deployments/">Creating Google Kubernetes Engine Deployments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../35-gcp-persistent-volume-for-gke/">Configuring persistent volume for Google Kubernetes Engine</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../36-gcloud-basics/">Basic gcloud commands</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../37-migrate-for-anthos/">37 migrate for anthos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../38-kubectl-basics/">38 kubectl basics</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../39-creating-gke-deployments/">39 creating gke deployments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../40-data-reliability-conference/">40 data reliability conference</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Persistent storage in GKE</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#task-1-create-pvs-and-pvcs">Task 1. Create PVs and PVCs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#connect-to-the-lab-gke-cluster">Connect to the lab GKE cluster</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#create-and-apply-a-manifest-with-a-pvc">Create and apply a manifest with a PVC</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-2-mount-and-verify-google-cloud-persistent-disk-pvcs-in-pods">Task 2. Mount and verify Google Cloud persistent disk PVCs in Pods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mount-the-pvc-to-a-pod">Mount the PVC to a Pod</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#test-the-persistence-of-the-pv">Test the persistence of the PV</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-3-create-statefulsets-with-pvcs">Task 3. Create StatefulSets with PVCs</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#release-the-pvc">Release the PVC</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-a-statefulset">Create a StatefulSet</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#verify-the-connection-of-pods-in-statefulsets">Verify the connection of Pods in StatefulSets</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-4-verify-the-persistence-of-persistent-volume-connections-to-pods-managed-by-statefulsets">Task 4. Verify the persistence of Persistent Volume connections to Pods managed by StatefulSets</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../42-creating-gke-deployments-from-shell/">42 creating gke deployments from shell</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../43-setting-up-react/">Steps to run react in local environment</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../44-redis-with-gcp-cloud-func/">44 redis with gcp cloud func</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Tanvir's Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Persistent storage in GKE</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="persistent-storage-in-gke">Persistent storage in GKE</h1>
+<h3 id="task-1-create-pvs-and-pvcs">Task 1. Create PVs and PVCs</h3>
+<p>In this task, you create a PVC, which triggers Kubernetes to automatically create a PV.</p>
+<h3 id="connect-to-the-lab-gke-cluster">Connect to the lab GKE cluster</h3>
+<p>In Cloud Shell, type the following command to set the environment variable for the zone and cluster name.</p>
+<pre><code>export my_zone=us-central1-a
+export my_cluster=standard-cluster-1
+</code></pre>
+<p>Configure tab completion for the kubectl command-line tool.</p>
+<pre><code>source &lt;(kubectl completion bash)
+</code></pre>
+<p>Configure access to your cluster for kubectl:</p>
+<pre><code>gcloud container clusters get-credentials $my_cluster --zone $my_zone
+</code></pre>
+<h3 id="create-and-apply-a-manifest-with-a-pvc">Create and apply a manifest with a PVC</h3>
+<p>Most of the time, you don't need to directly configure PV objects or create Compute Engine persistent disks. Instead, you can create a PVC, and Kubernetes automatically provisions a persistent disk for you.</p>
+<p>You create the PVC in this task using the pvc-demo.yaml manifest file that has been provided for you. This creates a 30 gigabyte PVC called hello-web-disk that can be mounted as a read-write volume on a single node at a time.</p>
+<pre><code>apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: hello-web-disk
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 30Gi
+</code></pre>
+<p>In Cloud Shell, enter the following command to clone the repository to the lab Cloud Shell.</p>
+<pre><code>git clone https://github.com/GoogleCloudPlatform/training-data-analyst
+</code></pre>
+<p>Create a soft link as a shortcut to the working directory.</p>
+<pre><code>ln -s ~/training-data-analyst/courses/ak8s/v1.1 ~/ak8s
+</code></pre>
+<p>Change to the directory that contains the sample files for this lab.</p>
+<pre><code>cd ~/ak8s/Storage/
+</code></pre>
+<p>To show that you currently have no PVCs, execute the following command:</p>
+<pre><code>kubectl get persistentvolumeclaim
+</code></pre>
+<p>Output (Do not copy):</p>
+<pre><code>No resources found in default namespace.
+</code></pre>
+<p>To create the PVC, execute the following command:</p>
+<pre><code>kubectl apply -f pvc-demo.yaml
+</code></pre>
+<p>To show your newly created PVC, execute the following command:</p>
+<pre><code>kubectl get persistentvolumeclaim
+</code></pre>
+<p>Partial output (Do not copy):</p>
+<pre><code>NAME           STATUS VOLUME        CAP   ACCESS MODES      CLASS   AGE
+hello-web-disk Bound  pvc-8...34   30Gi            RWO   standard    5s
+</code></pre>
+<h2 id="task-2-mount-and-verify-google-cloud-persistent-disk-pvcs-in-pods">Task 2. Mount and verify Google Cloud persistent disk PVCs in Pods</h2>
+<p>In this task, you attach your persistent disk PVC to a Pod. You mount the PVC as a volume as part of the manifest for the Pod.</p>
+<h3 id="mount-the-pvc-to-a-pod">Mount the PVC to a Pod</h3>
+<p>The manifest file pod-volume-demo.yaml deploys an nginx container, attaches the pvc-demo-volume to the Pod and mounts that volume to the path /var/www/html inside the nginx container. Files saved to this directory inside the container will be saved to the persistent volume and persist even if the Pod and the container are shutdown and recreated.</p>
+<pre><code>kind: Pod
+apiVersion: v1
+metadata:
+  name: pvc-demo-pod
+spec:
+  containers:
+    - name: frontend
+      image: nginx
+      volumeMounts:
+      - mountPath: &quot;/var/www/html&quot;
+        name: pvc-demo-volume
+  volumes:
+    - name: pvc-demo-volume
+      persistentVolumeClaim:
+        claimName: hello-web-disk
+</code></pre>
+<p>To create the Pod with the volume, execute the following command:</p>
+<pre><code>kubectl apply -f pod-volume-demo.yaml
+</code></pre>
+<p>List the Pods in the cluster.</p>
+<pre><code>kubectl get pods
+</code></pre>
+<p>Output (Do not copy):</p>
+<pre><code>NAME          READY    STATUS              RESTARTS   AGE
+pvc-demo-pod  0/1      ContainerCreating   0          18s
+</code></pre>
+<p>If you do this quickly after creating the Pod, you will see the status listed as "ContainerCreating" while the volume is mounted before the status changes to "Running".</p>
+<p>To verify the PVC is accessible within the Pod, you must gain shell access to your Pod. To start the shell session, execute the following command:</p>
+<pre><code>kubectl exec -it pvc-demo-pod -- sh
+</code></pre>
+<p>To create a simple text message as a web page in the Pod enter the following commands:</p>
+<pre><code>echo Test webpage in a persistent volume!&gt;/var/www/html/index.html
+chmod +x /var/www/html/index.html
+</code></pre>
+<p>Verify the text file contains your message.</p>
+<pre><code>cat /var/www/html/index.html
+</code></pre>
+<p>Output (Do not copy):</p>
+<pre><code>Test webpage in a persistent volume!
+</code></pre>
+<p>Enter the following command to leave the interactive shell on the nginx container.</p>
+<pre><code>exit
+</code></pre>
+<h3 id="test-the-persistence-of-the-pv">Test the persistence of the PV</h3>
+<p>You will now delete the Pod from the cluster, confirm that the PV still exists, then redeploy the Pod and verify the contents of the PV remain intact.</p>
+<p>Delete the pvc-demo-pod.</p>
+<pre><code>kubectl delete pod pvc-demo-pod
+</code></pre>
+<p>List the Pods in the cluster.</p>
+<pre><code>kubectl get pods
+</code></pre>
+<p>Output (Do not copy):</p>
+<pre><code>No resources found in default namespace.
+</code></pre>
+<p>There should be no Pods on the cluster.</p>
+<p>To show your PVC, execute the following command:</p>
+<pre><code>kubectl get persistentvolumeclaim
+</code></pre>
+<p>Partial output (Do not copy):</p>
+<pre><code>NAME           STATUS VOLUME        CAP   ACCESS MODES      CLASS   AGE
+hello-web-disk Bound  pvc-8...34   30Gi            RWO   standard   22m
+</code></pre>
+<p>Your PVC still exists, and was not deleted when the Pod was deleted.</p>
+<p>Redeploy the pvc-demo-pod.</p>
+<pre><code>kubectl apply -f pod-volume-demo.yaml
+</code></pre>
+<p>List the Pods in the cluster.</p>
+<pre><code>kubectl get pods
+</code></pre>
+<p>Output (Do not copy):</p>
+<pre><code>NAME           READY     STATUS    RESTARTS   AGE
+pvc-demo-pod   1/1       Running   0          15s
+</code></pre>
+<p>The Pod will deploy and the status will change to "Running" faster this time because the PV already exists and does not need to be created.</p>
+<p>To verify the PVC is still accessible within the Pod, you must gain shell access to your Pod. To start the shell session, execute the following command:</p>
+<pre><code>kubectl exec -it pvc-demo-pod -- sh
+</code></pre>
+<p>To verify that the text file still contains your message execute the following command:</p>
+<pre><code>cat /var/www/html/index.html
+</code></pre>
+<p>Output (Do not copy):</p>
+<pre><code>Test webpage in a persistent volume!
+</code></pre>
+<p>The contents of the persistent volume were not removed, even though the Pod was deleted from the cluster and recreated.</p>
+<p>Enter the following command to leave the interactive shell on the nginx container.</p>
+<pre><code>exit
+</code></pre>
+<h2 id="task-3-create-statefulsets-with-pvcs">Task 3. Create StatefulSets with PVCs</h2>
+<p>In this task, you use your PVC in a StatefulSet. A StatefulSet is like a Deployment, except that the Pods are given unique identifiers.</p>
+<h3 id="release-the-pvc">Release the PVC</h3>
+<p>Before you can use the PVC with the statefulset, you must delete the Pod that is currently using it. Execute the following command to delete the Pod:</p>
+<pre><code>kubectl delete pod pvc-demo-pod
+</code></pre>
+<p>Confirm the Pod has been removed.</p>
+<pre><code>kubectl get pods
+</code></pre>
+<p>Output (Do not copy):</p>
+<pre><code>No resources found in default namespace.
+</code></pre>
+<h3 id="create-a-statefulset">Create a StatefulSet</h3>
+<p>The manifest file statefulset-demo.yaml creates a StatefulSet that includes a LoadBalancer service and three replicas of a Pod containing an nginx container and a volumeClaimTemplate for 30 gigabyte PVCs with the name hello-web-disk. The nginx containers mount the PVC called hello-web-disk at /var/www/html as in the previous task.</p>
+<pre><code>kind: Service
+apiVersion: v1
+metadata:
+  name: statefulset-demo-service
+spec:
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 9376
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: statefulset-demo
+spec:
+  selector:
+    matchLabels:
+      app: MyApp
+  serviceName: statefulset-demo-service
+  replicas: 3
+  updateStrategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: MyApp
+    spec:
+      containers:
+      - name: stateful-set-container
+        image: nginx
+        ports:
+        - containerPort: 80
+          name: http
+        volumeMounts:
+        - name: hello-web-disk
+          mountPath: &quot;/var/www/html&quot;
+  volumeClaimTemplates:
+  - metadata:
+      name: hello-web-disk
+    spec:
+      accessModes: [ &quot;ReadWriteOnce&quot; ]
+      resources:
+        requests:
+          storage: 30Gi
+</code></pre>
+<p>To create the StatefulSet with the volume, execute the following command:</p>
+<pre><code>kubectl apply -f statefulset-demo.yaml
+</code></pre>
+<p>Output (Do not copy):</p>
+<pre><code>service &quot;statefulset-demo-service&quot; created
+statefulset.apps &quot;statefulset-demo&quot; created
+</code></pre>
+<p>You now have a statefulset running behind a service named statefulset-demo-service.</p>
+<h3 id="verify-the-connection-of-pods-in-statefulsets">Verify the connection of Pods in StatefulSets</h3>
+<p>Use "kubectl describe" to view the details of the StatefulSet:</p>
+<pre><code>kubectl describe statefulset statefulset-demo
+</code></pre>
+<p>Note the event status at the end of the output. The service and statefulset created successfully.</p>
+<pre><code>Normal  SuccessfulCreate  10s   statefulset-controller
+Message: create Claim hello-web-disk-statefulset-demo-0 Pod statefulset-demo-0 in StatefulSet statefulset-demo success
+Normal  SuccessfulCreate  10s   statefulset-controller
+Message: create Pod statefulset-demo-0 in StatefulSet statefulset-demo successful
+</code></pre>
+<p>List the Pods in the cluster.</p>
+<pre><code>kubectl get pods
+</code></pre>
+<p>Output (Do not copy):</p>
+<pre><code>NAME                 READY     STATUS    RESTARTS   AGE
+statefulset-demo-0   1/1       Running   0          6m
+statefulset-demo-1   1/1       Running   0          3m
+statefulset-demo-2   1/1       Running   0          2m
+</code></pre>
+<p>To list the PVCs, execute the following command:</p>
+<pre><code>kubectl get pvc
+</code></pre>
+<p>Output (Do not copy):</p>
+<pre><code>NAME                          STATUS    VOLUME           CAPACITY ACCESS
+hello-web-disk                Bound     pvc-86117ea6-...34   30Gi    RWO
+hello-web-disk-st...-demo-0   Bound     pvc-92d21d0f-...34   30Gi    RWO
+hello-web-disk-st...-demo-1   Bound     pvc-9bc84d92-...34   30Gi    RWO
+hello-web-disk-st...-demo-2   Bound     pvc-a526ecdf-...34   30Gi    RWO
+</code></pre>
+<p>The original hello-web-disk is still there and you can now see the individual PVCs that were created for each Pod in the new statefulset Pod.</p>
+<p>Use "kubectl describe" to view the details of the first PVC in the StatefulSet:</p>
+<pre><code>kubectl describe pvc hello-web-disk-statefulset-demo-0
+</code></pre>
+<h2 id="task-4-verify-the-persistence-of-persistent-volume-connections-to-pods-managed-by-statefulsets">Task 4. Verify the persistence of Persistent Volume connections to Pods managed by StatefulSets</h2>
+<p>In this task, you verify the connection of Pods in StatefulSets to particular PVs as the Pods are stopped and restarted.</p>
+<p>To verify that the PVC is accessible within the Pod, you must gain shell access to your Pod. To start the shell session, execute the following command:</p>
+<pre><code>kubectl exec -it statefulset-demo-0 -- sh
+</code></pre>
+<p>Verify that there is no index.html text file in the /var/www/html directory.</p>
+<pre><code>cat /var/www/html/index.html
+</code></pre>
+<p>To create a simple text message as a web page in the Pod enter the following commands:</p>
+<pre><code>echo Test webpage in a persistent volume!&gt;/var/www/html/index.html
+chmod +x /var/www/html/index.html
+</code></pre>
+<p>Verify the text file contains your message.</p>
+<pre><code>cat /var/www/html/index.html
+</code></pre>
+<p>Output (Do not copy):</p>
+<pre><code>Test webpage in a persistent volume!
+</code></pre>
+<p>Enter the following command to leave the interactive shell on the nginx container.</p>
+<pre><code>exit
+</code></pre>
+<p>Delete the Pod where you updated the file on the PVC.</p>
+<pre><code>kubectl delete pod statefulset-demo-0
+</code></pre>
+<p>List the Pods in the cluster.</p>
+<pre><code>kubectl get pods
+</code></pre>
+<p>You will see that the StatefulSet is automatically restarting the statefulset-demo-0 Pod.</p>
+<p>Note: You need to wait until the Pod status shows that it is running again.</p>
+<p>Connect to the shell on the new statefulset-demo-0 Pod.</p>
+<pre><code>kubectl exec -it statefulset-demo-0 -- sh
+</code></pre>
+<p>Verify that the text file still contains your message.</p>
+<pre><code>cat /var/www/html/index.html
+</code></pre>
+<p>Output (Do not copy):</p>
+<pre><code>Test webpage in a persistent volume!
+</code></pre>
+<p>The StatefulSet restarts the Pod and reconnects the existing dedicated PVC to the new Pod, ensuring that the data for that Pod is preserved.</p>
+<p>Enter the following command to leave the interactive shell on the nginx container.</p>
+<pre><code>exit
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../40-data-reliability-conference/" class="btn btn-neutral float-left" title="40 data reliability conference"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../42-creating-gke-deployments-from-shell/" class="btn btn-neutral float-right" title="42 creating gke deployments from shell">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../40-data-reliability-conference/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../42-creating-gke-deployments-from-shell/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

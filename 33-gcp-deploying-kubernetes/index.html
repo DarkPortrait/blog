@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://tanviralam.com/33-gcp-deploying-kubernetes/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>33 gcp deploying kubernetes - Tanvir's Notes</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "33 gcp deploying kubernetes";
+        var mkdocs_page_input_path = "33-gcp-deploying-kubernetes.md";
+        var mkdocs_page_url = "/33-gcp-deploying-kubernetes/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Tanvir's Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../01-linear-algebra-machine-learning/">Linear Algebra for Machine Learning</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../02-git_workflow/">Creating a repo</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../03-python-virtual-environments-with-jupyter/">What are Python Virtual Environments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../04-ecommerce-payments/">Structure</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../05-pubsub-google-clouds/">05 pubsub google clouds</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../07-tmux/">Tmux</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../08-using-system-clipboard-in-vim/">08 using system clipboard in vim</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../09-padi-openwater-sec1/">09 padi openwater sec1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../10-padi-openwater-sec2/">10 padi openwater sec2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../11-padi-openwater-sec3/">11 padi openwater sec3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../12-padi-openwater-sec3-problem-management/">12 padi openwater sec3 problem management</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../13-padi-openwater-sec3-equipment3/">13 padi openwater sec3 equipment3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../14-padi-openwater-sec3-skills2/">14 padi openwater sec3 skills2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../15-padi-openwater-sec4-equipment4/">15 padi openwater sec4 equipment4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../16-padi-openwater-sec4-diver4/">16 padi openwater sec4 diver4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../17-padi-openwater-sec4-divecomputers1/">17 padi openwater sec4 divecomputers1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../18-padi-openwater-sec4-skills4/">18 padi openwater sec4 skills4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../19-padi-openwater-sec5-divecomputers2/">19 padi openwater sec5 divecomputers2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../20-padi-openwater-sec5-diver5/">20 padi openwater sec5 diver5</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../21-padi-sec5-skills5/">21 padi sec5 skills5</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../22-ubuntu-bluetooth-uninstall-reinstall/">22 ubuntu bluetooth uninstall reinstall</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../23-advanced-big-query/">Objectives</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../24-freedomticket-week1-intro-to-selling/">24 freedomticket week1 intro to selling</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../25-gcp-essential-infrastructure-cloud-sql/">Implementing Cloud SQL</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../26-gcp-essential-infrastructure-monitoring/">Resource Monitoring</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../27-gcp-elastic-cloud-vpn/">Virtual Private Networks (VPN)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../28-http-load-balancer/">Configuring an HTTP Load Balancer with Autoscaling</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../29-internal-load-balancer/">Configuring an Internal Load Balancer</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../30-deployment-manager/">Automating the Deployment of Infrastructure Using Deployment Manager</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../31-aws-session/">31 aws session</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../32-gcp-cloud-build/">32 gcp cloud build</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">33 gcp deploying kubernetes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#task-1-deploy-gke-clusters">Task 1. Deploy GKE clusters</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-2-modify-gke-clusters">Task 2. Modify GKE clusters</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-3-deploy-a-sample-workload">Task 3. Deploy a sample workload</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#task-4-view-details-about-workloads-in-the-google-cloud-console">Task 4. View details about workloads in the Google Cloud Console</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../34-gcp-creating-kubernetes-engine-deployments/">Creating Google Kubernetes Engine Deployments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../35-gcp-persistent-volume-for-gke/">Configuring persistent volume for Google Kubernetes Engine</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../36-gcloud-basics/">Basic gcloud commands</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../37-migrate-for-anthos/">37 migrate for anthos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../38-kubectl-basics/">38 kubectl basics</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../39-creating-gke-deployments/">39 creating gke deployments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../40-data-reliability-conference/">40 data reliability conference</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../41-persistent-storage-gke/">Persistent storage in GKE</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../42-creating-gke-deployments-from-shell/">42 creating gke deployments from shell</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../43-setting-up-react/">Steps to run react in local environment</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../44-redis-with-gcp-cloud-func/">44 redis with gcp cloud func</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Tanvir's Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>33 gcp deploying kubernetes</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="objectives">Objectives</h2>
+<p>Use the Google Cloud Console to build and manipulate GKE clusters</p>
+<p>Use the Google Cloud Console to deploy a Pod</p>
+<p>Use the Google Cloud Console to examine the cluster and Pods</p>
+<h3 id="task-1-deploy-gke-clusters">Task 1. Deploy GKE clusters</h3>
+<p>Using cloud console:</p>
+<p>On navigation menu, click on Kubernetes Engine &gt; Clusters</p>
+<p>Click Create to begin creating a GKE cluster. In the GKE Standard cluster option select configure in the next screen.</p>
+<p>Examine the console UI and the controls to change the cluster name, the cluster location, Kubernetes version, the number of nodes, and the node resources such as the machine type in the default node pool.</p>
+<p>Clusters can be created across a region or in a single zone. A single zone is the default. When you deploy across a region the nodes are deployed to three separate zones and the total number of nodes deployed will be three times higher.</p>
+<p>Change the cluster name to standard-cluster-1 and zone to us-central1-a. Leave all the values at their defaults and click Create.
+The cluster begins provisioning.</p>
+<p>Note: You need to wait a few minutes for the cluster deployment to complete.</p>
+<p>Click the cluster name standard-cluster-1 to view the cluster details</p>
+<p>You can scroll down the page to view more details.</p>
+<p>Click the Storage and Nodes tabs under the cluster name (standard-cluster-1) at the top to view more of the cluster details.</p>
+<h3 id="task-2-modify-gke-clusters">Task 2. Modify GKE clusters</h3>
+<p>It is easy to modify many of the parameters of existing clusters using either the Google Cloud Console or Cloud Shell. In this task, you use the Google Cloud Console to modify the size of GKE clusters.</p>
+<p>In the Google Cloud Console, click NODES at the top of the details page for standard-cluster-1.
+In Node Pools section, click default-pool.
+In the Google Cloud Console, click RESIZE at the top of the Node Pool Details page.
+Change the number of nodes from 3 to 4 and click RESIZE.</p>
+<h3 id="task-3-deploy-a-sample-workload">Task 3. Deploy a sample workload</h3>
+<p>In this task, using the Google Cloud console you will deploy a Pod running the nginx web server as a sample workload.</p>
+<p>In the Google Cloud Console, on the Navigation menu( Navigation menu), click Kubernetes Engine &gt; Workloads.</p>
+<p>Click Deploy to show the Create a deployment wizard.</p>
+<p>Click Continue to accept the default container image, nginx:latest, which deploys 3 Pods each with a single container running the latest version of nginx.
+Scroll to the bottom of the window and click the Deploy button leaving the Configuration details at the defaults.</p>
+<p>When the deployment completes your screen will refresh to show the details of your new nginx deployment.</p>
+<h3 id="task-4-view-details-about-workloads-in-the-google-cloud-console">Task 4. View details about workloads in the Google Cloud Console</h3>
+<p>In this task, you view details of your GKE workloads directly in the Google Cloud Console.</p>
+<p>In the Google Cloud Console, on the Navigation menu (Navigation menu), click Kubernetes Engine &gt; Workloads.</p>
+<p>In the Google Cloud Console, on the Kubernetes Engine &gt; Workloads page, click nginx-1.
+You may see Pods (3/3) as the default deployment will start with three pods but will scale back to 1 after a few minutes. You can continue with the lab.</p>
+<p>This displays the overview information for the workload showing details like resource utilization charts, links to logs, and details of the Pods associated with this workload.</p>
+<p>In the Google Cloud Console, click the Details tab for the nginx-1 workload. The Details tab shows more details about the workload including the Pod specification, number and status of Pod replicas and details about the horizontal Pod autoscaler.</p>
+<p>Click the Revision History tab. This displays a list of the revisions that have been made to this workload.</p>
+<p>Click the Events tab. This tab lists events associated with this workload.</p>
+<p>And then the YAML tab. This tab provides the complete YAML file that defines this components and full configuration of this sample workload.</p>
+<p>Still in the Google Cloud Console's Details tab for the nginx-1 workload, click the Overview tab, scroll down to the Managed Pods section and click the name of one of the Pods to view the details page for that Pod.</p>
+<p>Note:</p>
+<p>The default deployment will start with three pods but will scale back to 1 after a few minutes so you may need to refresh the Overview page to make sure you have a valid Pod to inspect.</p>
+<p>The Pod Details page provides information on the Pod configuration and resource utilization and the node where the Pod is running.</p>
+<p>In the Pod details page, you can click the Events and Logs tabs to view event details and links to container logs in Cloud Operations.</p>
+<p>Click the YAML tab to view the detailed YAML file for the Pod configuration.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../32-gcp-cloud-build/" class="btn btn-neutral float-left" title="32 gcp cloud build"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../34-gcp-creating-kubernetes-engine-deployments/" class="btn btn-neutral float-right" title="Creating Google Kubernetes Engine Deployments">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../32-gcp-cloud-build/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../34-gcp-creating-kubernetes-engine-deployments/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

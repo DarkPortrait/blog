@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://tanviralam.com/34-gcp-creating-kubernetes-engine-deployments/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Creating Google Kubernetes Engine Deployments - Tanvir's Notes</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Creating Google Kubernetes Engine Deployments";
+        var mkdocs_page_input_path = "34-gcp-creating-kubernetes-engine-deployments.md";
+        var mkdocs_page_url = "/34-gcp-creating-kubernetes-engine-deployments/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Tanvir's Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../01-linear-algebra-machine-learning/">Linear Algebra for Machine Learning</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../02-git_workflow/">Creating a repo</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../03-python-virtual-environments-with-jupyter/">What are Python Virtual Environments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../04-ecommerce-payments/">Structure</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../05-pubsub-google-clouds/">05 pubsub google clouds</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../07-tmux/">Tmux</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../08-using-system-clipboard-in-vim/">08 using system clipboard in vim</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../09-padi-openwater-sec1/">09 padi openwater sec1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../10-padi-openwater-sec2/">10 padi openwater sec2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../11-padi-openwater-sec3/">11 padi openwater sec3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../12-padi-openwater-sec3-problem-management/">12 padi openwater sec3 problem management</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../13-padi-openwater-sec3-equipment3/">13 padi openwater sec3 equipment3</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../14-padi-openwater-sec3-skills2/">14 padi openwater sec3 skills2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../15-padi-openwater-sec4-equipment4/">15 padi openwater sec4 equipment4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../16-padi-openwater-sec4-diver4/">16 padi openwater sec4 diver4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../17-padi-openwater-sec4-divecomputers1/">17 padi openwater sec4 divecomputers1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../18-padi-openwater-sec4-skills4/">18 padi openwater sec4 skills4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../19-padi-openwater-sec5-divecomputers2/">19 padi openwater sec5 divecomputers2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../20-padi-openwater-sec5-diver5/">20 padi openwater sec5 diver5</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../21-padi-sec5-skills5/">21 padi sec5 skills5</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../22-ubuntu-bluetooth-uninstall-reinstall/">22 ubuntu bluetooth uninstall reinstall</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../23-advanced-big-query/">Objectives</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../24-freedomticket-week1-intro-to-selling/">24 freedomticket week1 intro to selling</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../25-gcp-essential-infrastructure-cloud-sql/">Implementing Cloud SQL</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../26-gcp-essential-infrastructure-monitoring/">Resource Monitoring</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../27-gcp-elastic-cloud-vpn/">Virtual Private Networks (VPN)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../28-http-load-balancer/">Configuring an HTTP Load Balancer with Autoscaling</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../29-internal-load-balancer/">Configuring an Internal Load Balancer</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../30-deployment-manager/">Automating the Deployment of Infrastructure Using Deployment Manager</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../31-aws-session/">31 aws session</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../32-gcp-cloud-build/">32 gcp cloud build</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../33-gcp-deploying-kubernetes/">33 gcp deploying kubernetes</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Creating Google Kubernetes Engine Deployments</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#objectives">Objectives</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#activate-cloud-shell">Activate cloud shell</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#task-1-create-deployment-manifests-and-deploy-to-the-cluster">Task 1. Create deployment manifests and deploy to the cluster</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#connect-to-the-lab-gke-cluster">Connect to the lab GKE cluster</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#create-a-deployment-manifest">Create a deployment manifest</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#task-2-manually-scale-up-and-down-the-number-of-pods-in-deployments">Task 2. Manually scale up and down the number of Pods in deployments</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#scale-pods-up-and-down-in-the-console">Scale Pods up and down in the console</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#scale-pods-up-and-down-in-the-shell">Scale Pods up and down in the shell</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#task-3-trigger-a-deployment-rollout-and-a-deployment-rollback">Task 3. Trigger a deployment rollout and a deployment rollback</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#trigger-a-deployment-rollout">Trigger a deployment rollout</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#view-the-rollout-history-of-the-deployment">View the rollout history of the deployment.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trigger-a-deployment-rollback">Trigger a deployment rollback</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#define-service-types-in-the-manifest">Define service types in the manifest</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#verify-the-loadbalancer-creation">Verify the LoadBalancer creation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#task-5-perform-a-canary-deployment">Task 5. Perform a canary deployment</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#session-affinity">Session affinity</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../35-gcp-persistent-volume-for-gke/">Configuring persistent volume for Google Kubernetes Engine</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../36-gcloud-basics/">Basic gcloud commands</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../37-migrate-for-anthos/">37 migrate for anthos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../38-kubectl-basics/">38 kubectl basics</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../39-creating-gke-deployments/">39 creating gke deployments</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../40-data-reliability-conference/">40 data reliability conference</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../41-persistent-storage-gke/">Persistent storage in GKE</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../42-creating-gke-deployments-from-shell/">42 creating gke deployments from shell</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../43-setting-up-react/">Steps to run react in local environment</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../44-redis-with-gcp-cloud-func/">44 redis with gcp cloud func</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Tanvir's Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Creating Google Kubernetes Engine Deployments</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="creating-google-kubernetes-engine-deployments">Creating Google Kubernetes Engine Deployments</h1>
+<h2 id="objectives">Objectives</h2>
+<p>Create deployment manifests, deploy to cluster, and verify Pod rescheduling as nodes are disabled</p>
+<p>Trigger manual scaling up and down of Pods in deployments</p>
+<p>Trigger deployment rollout (rolling update to new version) and rollbacks</p>
+<p>Perform a Canary deployment</p>
+<h3 id="activate-cloud-shell">Activate cloud shell</h3>
+<p>Google Cloud Shell is a virtual machine that is loaded with development tools. It offers a persistent 5GB home directory and runs on the Google Cloud. Google Cloud Shell provides command-line access to your GCP resources.</p>
+<p>This can be activated from the Cloud shell button on the GCP top right toolbar.</p>
+<p><code>gcloud</code> is the command-line tool for Google Cloud Platform. It comes pre-installed on Cloud Shell and supports tab-completion.</p>
+<p>list the active account name with this command:</p>
+<pre><code>gcloud auth list
+</code></pre>
+<p>list the project ID with this command:</p>
+<pre><code>gcloud config list project
+</code></pre>
+<h3 id="task-1-create-deployment-manifests-and-deploy-to-the-cluster">Task 1. Create deployment manifests and deploy to the cluster</h3>
+<p>In this task, you create a deployment manifest for a Pod inside the cluster.</p>
+<h4 id="connect-to-the-lab-gke-cluster">Connect to the lab GKE cluster</h4>
+<p>In Cloud Shell, type the following command to set the environment variable for the zone and cluster name.</p>
+<pre><code>export my_zone=us-central1-a
+export my_cluster=standard-cluster-1
+</code></pre>
+<p>Configure kubectl tab completion in Cloud Shell.</p>
+<pre><code>source &lt;(kubectl completion bash)
+</code></pre>
+<p>In Cloud Shell, configure access to your cluster for the kubectl command-line tool, using the following command:</p>
+<pre><code>gcloud container clusters get-credentials $my_cluster --zone $my_zone
+</code></pre>
+<p>In Cloud Shell enter the following command to clone the repository to the lab Cloud Shell.</p>
+<pre><code>git clone https://github.com/GoogleCloudPlatform/training-data-analyst
+</code></pre>
+<p>Create a soft link as a shortcut to the working directory.</p>
+<pre><code>ln -s ~/training-data-analyst/courses/ak8s/v1.1 ~/ak8s
+</code></pre>
+<p>Change to the directory that contains the sample files for this lab.</p>
+<pre><code>cd ~/ak8s/Deployments/
+</code></pre>
+<h4 id="create-a-deployment-manifest">Create a deployment manifest</h4>
+<p>You will create a deployment using a sample deployment manifest called nginx-deployment.yaml that has been provided for you. This deployment is configured to run three Pod replicas with a single nginx container in each Pod listening on TCP port 80.</p>
+<pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80
+</code></pre>
+<p>To deploy your manifest, execute the following command:</p>
+<pre><code>kubectl apply -f ./nginx-deployment.yaml
+</code></pre>
+<p>To view a list of deployments, execute the following command:</p>
+<pre><code>kubectl get deployments
+</code></pre>
+<p>The output should look like this example.</p>
+<p>Output (do not copy)</p>
+<pre><code>NAME               READY      UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   0/3        3            0           3s
+</code></pre>
+<p>Wait a few seconds, and repeat the command until the number listed for CURRENT deployments reported by the command matches the number of DESIRED deployments.
+The final output should look like the example.</p>
+<p>Output (do not copy)</p>
+<pre><code>NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   3/3     3            3           42s
+</code></pre>
+<h3 id="task-2-manually-scale-up-and-down-the-number-of-pods-in-deployments">Task 2. Manually scale up and down the number of Pods in deployments</h3>
+<p>Sometimes, you want to shut down a Pod instance. Other times, you want ten Pods running. In Kubernetes, you can scale a specific Pod to the desired number of instances. To shut them down, you scale to zero.</p>
+<p>In this task, you scale Pods up and down in the Google Cloud Console and Cloud Shell.</p>
+<h4 id="scale-pods-up-and-down-in-the-console">Scale Pods up and down in the console</h4>
+<p>Switch to the Google Cloud Console tab.
+On the Navigation menu, click Kubernetes Engine &gt; Workloads.
+Click nginx-deployment (your deployment) to open the Deployment details page.
+At the top, click ACTIONS &gt; Scale.
+Type 1 and click SCALE.
+This action scales down your cluster. You should see the Pod status being updated under Managed Pods. You might have to click Refresh.</p>
+<h4 id="scale-pods-up-and-down-in-the-shell">Scale Pods up and down in the shell</h4>
+<p>Switch back to the Cloud Shell browser tab.</p>
+<p>In the Cloud Shell, to view a list of Pods in the deployments, execute the following command:</p>
+<pre><code>kubectl get deployments 
+</code></pre>
+<p>Output (do not copy)</p>
+<pre><code>NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   1/1     1            1           3m
+</code></pre>
+<p>To scale the Pod back up to three replicas, execute the following command:</p>
+<pre><code>kubectl scale --replicas=3 deployment nginx-deployment
+</code></pre>
+<p>To view a list of Pods in the deployments, execute the following command:</p>
+<pre><code>kubectl get deployments
+</code></pre>
+<h3 id="task-3-trigger-a-deployment-rollout-and-a-deployment-rollback">Task 3. Trigger a deployment rollout and a deployment rollback</h3>
+<p>A deployment's rollout is triggered if and only if the deployment's Pod template (that is, .spec.template) is changed, for example, if the labels or container images of the template are updated. Other updates, such as scaling the deployment, do not trigger a rollout.</p>
+<p>In this task, you trigger deployment rollout, and then you trigger deployment rollback.</p>
+<h4 id="trigger-a-deployment-rollout">Trigger a deployment rollout</h4>
+<p>To update the version of nginx in the deployment, execute the following command:</p>
+<pre><code>kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.9.1 --record
+</code></pre>
+<p>This updates the container image in your Deployment to nginx v1.9.1. The <code>record</code> flag is being deprecated.</p>
+<p>To view the rollout status, execute the following command:</p>
+<pre><code>kubectl rollout status deployment.v1.apps/nginx-deployment
+</code></pre>
+<p>The output should look like the example.</p>
+<p>Output (do not copy)</p>
+<pre><code>Waiting for rollout to finish: 1 out of 3 new replicas updated...
+Waiting for rollout to finish: 1 out of 3 new replicas updated...
+Waiting for rollout to finish: 1 out of 3 new replicas updated...
+Waiting for rollout to finish: 2 out of 3 new replicas updated...
+Waiting for rollout to finish: 2 out of 3 new replicas updated...
+Waiting for rollout to finish: 2 out of 3 new replicas updated...
+Waiting for rollout to finish: 1 old replicas pending termination...
+Waiting for rollout to finish: 1 old replicas pending termination...
+deployment &quot;nginx-deployment&quot; successfully rolled out
+</code></pre>
+<p>To verify the change, get the list of deployments.</p>
+<pre><code>kubectl get deployments
+</code></pre>
+<p>The output should look like the example.</p>
+<p>Output (do not copy)</p>
+<pre><code>NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   3/3     3            3           6m
+</code></pre>
+<h4 id="view-the-rollout-history-of-the-deployment">View the rollout history of the deployment.</h4>
+<pre><code>kubectl rollout history deployment nginx-deployment
+</code></pre>
+<p>The output should look like the example. Your output might not be an exact match.</p>
+<p>Output (do not copy)</p>
+<pre><code>deployments &quot;nginx-deployment&quot;
+REVISION  CHANGE-CAUSE
+1         &lt;none&gt;
+2         kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.9.1 --record=true
+</code></pre>
+<h4 id="trigger-a-deployment-rollback">Trigger a deployment rollback</h4>
+<p>To roll back an object's rollout, you can use the kubectl rollout undo command.</p>
+<p>To roll back to the previous version of the nginx deployment, execute the following command:</p>
+<pre><code>kubectl rollout undo deployments nginx-deployment
+</code></pre>
+<p>View the updated rollout history of the deployment.</p>
+<pre><code>kubectl rollout history deployment nginx-deployment
+</code></pre>
+<p>The output should look like the example. Your output might not be an exact match.</p>
+<p>Output (do not copy)</p>
+<pre><code>deployments &quot;nginx-deployment&quot;
+REVISION  CHANGE-CAUSE
+2         kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.9.1 --record=true
+3         &lt;none&gt;
+</code></pre>
+<p>View the details of the latest deployment revision</p>
+<pre><code>kubectl rollout history deployment/nginx-deployment --revision=3
+</code></pre>
+<p>The output should look like the example. Your output might not be an exact match but it will show that the current revision has rolled back to nginx:1.7.9.</p>
+<p>Output (do not copy)</p>
+<pre><code>deployments &quot;nginx-deployment&quot; with revision #3
+Pod Template:
+  Labels:       app=nginx
+        pod-template-hash=3123191453
+  Containers:
+   nginx:
+    Image:      nginx:1.7.9
+    Port:       80/TCP
+    Host Port:  0/TCP
+    Environment:        &lt;none&gt;
+    Mounts:     &lt;none&gt;
+  Volumes:      &lt;none&gt;
+</code></pre>
+<h4 id="define-service-types-in-the-manifest">Define service types in the manifest</h4>
+<p>A manifest file called service-nginx.yaml that deploys a LoadBalancer service type has been provided for you. This service is configured to distribute inbound traffic on TCP port 60000 to port 80 on any containers that have the label app: nginx.</p>
+<pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  type: LoadBalancer
+  selector:
+    app: nginx
+  ports:
+  - protocol: TCP
+    port: 60000
+    targetPort: 80
+</code></pre>
+<p>In the Cloud Shell, to deploy your manifest, execute the following command:</p>
+<pre><code>kubectl apply -f ./service-nginx.yaml
+</code></pre>
+<p>This manifest defines a service and applies it to Pods that correspond to the selector. In this case, the manifest is applied to the nginx container that you deployed in task 1. This service also applies to any other Pods with the app: nginx label, including any that are created after the service.</p>
+<h4 id="verify-the-loadbalancer-creation">Verify the LoadBalancer creation</h4>
+<p>To view the details of the nginx service, execute the following command:</p>
+<pre><code>kubectl get service nginx
+</code></pre>
+<p>The output should look like the example.</p>
+<p>Output (do not copy)</p>
+<pre><code>NAME      CLUSTER_IP      EXTERNAL_IP      PORT(S)   SELECTOR    AGE
+nginx     10.X.X.X        X.X.X.X          60000/TCP    run=nginx   1m
+</code></pre>
+<p>When the external IP appears, open http://[EXTERNAL_IP]:60000/ in a new browser tab to see the server being served through network load balancing.</p>
+<p>It may take a few seconds before the ExternalIP field is populated for your service. This is normal. Just re-run the kubectl get services nginx command every few seconds until the field is populated.</p>
+<h3 id="task-5-perform-a-canary-deployment">Task 5. Perform a canary deployment</h3>
+<p>A canary deployment is a separate deployment used to test a new version of your application. A single service targets both the canary and the normal deployments. And it can direct a subset of users to the canary version to mitigate the risk of new releases. The manifest file nginx-canary.yaml that is provided for you deploys a single pod running a newer version of nginx than your main deployment. In this task, you create a canary deployment using this new deployment file.</p>
+<pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-canary
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+        track: canary
+        Version: 1.9.1
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.9.1
+        ports:
+        - containerPort: 80
+</code></pre>
+<p>The manifest for the nginx Service you deployed in the previous task uses a label selector to target the Pods with the app: nginx label. Both the normal deployment and this new canary deployment have the app: nginx label. Inbound connections will be distributed by the service to both the normal and canary deployment Pods. The canary deployment has fewer replicas (Pods) than the normal deployment, and thus it is available to fewer users than the normal deployment.</p>
+<p>Create the canary deployment based on the configuration file.</p>
+<pre><code>kubectl apply -f nginx-canary.yaml
+</code></pre>
+<p>When the deployment is complete, verify that both the nginx and the nginx-canary deployments are present.</p>
+<pre><code>kubectl get deployments
+</code></pre>
+<p>Switch back to the browser tab that is connected to the external LoadBalancer service ip and refresh the page. You should continue to see the standard Welcome to nginx page.</p>
+<p>Switch back to the Cloud Shell and scale down the primary deployment to 0 replicas.</p>
+<pre><code>kubectl scale --replicas=0 deployment nginx-deployment
+</code></pre>
+<p>Verify that the only running replica is now the Canary deployment:</p>
+<pre><code>kubectl get deployments
+</code></pre>
+<p>Switch back to the browser tab that is connected to the external LoadBalancer service ip and refresh the page. You should continue to see the standard Welcome to nginx page showing that the Service is automatically balancing traffic to the canary deployment.</p>
+<h4 id="session-affinity">Session affinity</h4>
+<p>The service configuration used in the lab does not ensure that all requests from a single client will always connect to the same Pod. Each request is treated separately and can connect to either the normal nginx deployment or to the nginx-canary deployment. This potential to switch between different versions may cause problems if there are significant changes in functionality in the canary release. To prevent this you can set the sessionAffinity field to ClientIP in the specification of the service if you need a client's first request to determine which Pod will be used for all subsequent connections.</p>
+<p>For example:</p>
+<pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  type: LoadBalancer
+  sessionAffinity: ClientIP
+  selector:
+    app: nginx
+  ports:
+  - protocol: TCP
+    port: 60000
+    targetPort: 80
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../33-gcp-deploying-kubernetes/" class="btn btn-neutral float-left" title="33 gcp deploying kubernetes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../35-gcp-persistent-volume-for-gke/" class="btn btn-neutral float-right" title="Configuring persistent volume for Google Kubernetes Engine">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../33-gcp-deploying-kubernetes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../35-gcp-persistent-volume-for-gke/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
