@@ -1,5 +1,3 @@
 site_name: Tanvir's Notes
 site_url: https://tanviralam.com
-nav:
-    - Home: index.md
 theme: readthedocs
