@@ -1,3 +1,7 @@
 site_name: Tanvir's Notes
 site_url: https://tanviralam.com
-theme: readthedocs
+theme: 
+    name: material
+    palette:
+        scheme: slate
+        accent: indigo
